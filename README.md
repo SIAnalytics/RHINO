@@ -21,6 +21,20 @@ DOTA-v2.0
 |RHINO| ResNet50 (1024,1024,200) | 59.26 |    [rhino_r50_dota2](configs/rhino/rhino_phc_haus-4scale_r50_8xb2-36e_dotav2.py)      |  [model]() |
 |RHINO| Swin-T (1024,1024,200) | 60.72 |     [rhino_swint_dota2](configs/rhino/rhino_phc_haus-4scale_swint_8xb2-36e_dotav2.py)      | [model]() |
 
+DOTA-v1.5
+| Method |         Backbone         | AP50  |                            Config                          | Download |
+| :-----: | :----------------------: | :---: | :----------------------------------------------------------: |  :----: |
+|RHINO| ResNet50 (1024,1024,200) | 59.26 |    [rhino_r50_dotav15](configs/rhino/rhino_phc_haus-4scale_r50_8xb2-36e_dotav15.py)      |  [model]() |
+|RHINO| Swin-T (1024,1024,200) | 60.72 |     [rhino_swint_dotav15](configs/rhino/rhino_phc_haus-4scale_swint_8xb2-36e_dotav15.py)      | [model]() |
+
+DOTA-v1.0
+| Method |         Backbone         | AP50  |                            Config                          | Download |
+| :-----: | :----------------------: | :---: | :----------------------------------------------------------: |  :----: |
+|RHINO| ResNet50 (1024,1024,200) | 59.26 |    [rhino_r50_dota](configs/rhino/rhino_phc_haus-4scale_r50_8xb2-36e_dota.py)      |  [model]() |
+|RHINO| Swin-T (1024,1024,200) | 60.72 |     [rhino_swint_dota](configs/rhino/rhino_phc_haus-4scale_swint_8xb2-36e_dota.py)      | [model]() |
+
+
+
 
 ### Preprare Dataset
 Details are described in https://github.com/open-mmlab/mmrotate/blob/main/tools/data/dota/README.md
@@ -41,25 +55,8 @@ python3 tools/data/dota/split/img_split.py --base-json \
 To train the model(s) in the paper, run this command:
 
 ```bash
-# DOTA-v1.0 R-50
-export CONFIG='configs/rhino/rhino_phc_haus-4scale_r50_8xb2-36e_dota.py'
-# DOTA-v1.0 Swin-T
-export CONFIG='configs/rhino/rhino_phc_haus-4scale_swint_8xb2-36e_dota.py'
-
-# DOTA-v1.5 R-50
-export CONFIG='configs/rhino/rhino_phc_haus-4scale_r50_8xb2-36e_dotav15.py'
-# DOTA-v1.5 Swin-T
-export CONFIG='configs/rhino/rhino_phc_haus-4scale_swint_8xb2-36e_dotav15.py'
-
 # DOTA-v2.0 R-50
 export CONFIG='configs/rhino/rhino_phc_haus-4scale_r50_8xb2-36e_dotav2.py'
-# DOTA-v2.0 Swin-T
-export CONFIG='configs/rhino/rhino_phc_haus-4scale_swint_8xb2-36e_dotav2.py'
-
-# DIOR R-50
-export CONFIG='configs/rhino/rhino_phc_haus-4scale_r50_8xb2-36e_dior.py'
-# DIOR Swin-T
-export CONFIG='configs/rhino/rhino_phc_haus-4scale_swint_8xb2-36e_dior.py'
 bash tools/dist_train.sh $CONFIG 2
 ```
 
@@ -69,8 +66,8 @@ To evaluate our models on DOTA, run:
 
 ```bash
 # example
-export CONFIG='configs/rhino/rhino_phc_haus-4scale_r50_8xb2-36e_dota.py'
-export CKPT='work_dirs/rhino_phc_haus-4scale_r50_8xb2-36e_dota/epoch_36.pth'
+export CONFIG='configs/rhino/rhino_phc_haus-4scale_r50_8xb2-36e_dotav2.py'
+export CKPT='work_dirs/rhino_phc_haus-4scale_r50_8xb2-36e_dotav2/epoch_36.pth'
 python3 tools/test.py $CONFIG $CKPT
 ```
 Evaluation is processed in the [official DOTA evaluation server](https://captain-whu.github.io/DOTA/evaluation.html).
