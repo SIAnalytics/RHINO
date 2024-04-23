@@ -1,19 +1,4 @@
-_base_ = './rhino-4scale_r50_8xb2-12e_dotav2.py'
-
-max_epochs = 36
-train_cfg = dict(
-    type='EpochBasedTrainLoop', max_epochs=max_epochs, val_interval=6)
-param_scheduler = [
-    dict(
-        type='MultiStepLR',
-        begin=0,
-        end=max_epochs,
-        by_epoch=True,
-        milestones=[27, 33],
-        gamma=0.1)
-]
-
-train_dataloader = dict(batch_size=2)
+_base_ = './rhino-4scale_swint_2xb2-36e_dota.py'
 
 costs = [
     dict(type='mmdet.FocalLossCost', weight=2.0),
@@ -31,7 +16,6 @@ model = dict(
     version='v2',
     bbox_head=dict(
         type='RHINOPositiveHungarianClassificationHead',
-        num_classes=18,
         loss_iou=dict(
             type='GDLoss',
             loss_type='kld',

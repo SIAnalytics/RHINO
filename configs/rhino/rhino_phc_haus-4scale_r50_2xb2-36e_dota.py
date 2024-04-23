@@ -1,8 +1,8 @@
-_base_ = './rhino-4scale_r50_8xb2-12e_dotav15.py'
+_base_ = './rhino-4scale_r50_2xb2-12e_dota.py'
 
 max_epochs = 36
 train_cfg = dict(
-    type='EpochBasedTrainLoop', max_epochs=max_epochs, val_interval=12)
+    type='EpochBasedTrainLoop', max_epochs=max_epochs, val_interval=6)
 param_scheduler = [
     dict(
         type='MultiStepLR',

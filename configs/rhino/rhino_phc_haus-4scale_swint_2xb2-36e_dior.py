@@ -1,4 +1,4 @@
-_base_ = './rhino-4scale_r50_8xb2-12e_dotav2.py'
+_base_ = './rhino-4scale_r50_2xb2-12e_dior.py'
 
 max_epochs = 36
 train_cfg = dict(
@@ -24,10 +24,10 @@ costs = [
         sqrt=False,
         weight=5.0)
 ]
-
 depths = [2, 2, 6, 2]
 
 pretrained = 'https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth'  # noqa
+
 model = dict(
     version='v2',
     backbone=dict(
@@ -69,7 +69,6 @@ model = dict(
         dn_assigner=dict(type='DNGroupHungarianAssigner', match_costs=costs),
     ))
 
-# optimizer
 optim_wrapper = dict(
     type='OptimWrapper',
     paramwise_cfg=dict(

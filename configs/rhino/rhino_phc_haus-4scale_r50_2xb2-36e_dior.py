@@ -1,4 +1,4 @@
-_base_ = './rhino-4scale_r50_8xb2-12e_dior.py'
+_base_ = './rhino-4scale_r50_2xb2-12e_dior.py'
 
 max_epochs = 36
 train_cfg = dict(
