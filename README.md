@@ -1,5 +1,5 @@
 # Hausdorff Distance Matching with Adaptive Query Denoising for Rotated Detection Transformer
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/rhino-rotated-detr-with-dynamic-denoising-via/oriented-object-detction-on-dota-2-0)](https://paperswithcode.com/sota/oriented-object-detction-on-dota-2-0?p=rhino-rotated-detr-with-dynamic-denoising-via)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/rhino-rotated-detr-with-dynamic-denoising-via/oriented-object-detection-on-dota-2-0)](https://paperswithcode.com/sota/oriented-object-detection-on-dota-2-0?p=rhino-rotated-detr-with-dynamic-denoising-via)
 
 **[SI Analytics](https://www.si-analytics.ai/)**
 
