@@ -1,4 +1,8 @@
+# Copyright (c) SI Analytics. All rights reserved.
+# Licensed under the CC BY-NC 4.0 License. See LICENSE file in the project root for full license information.
+#
 # Copyright (c) OpenMMLab. All rights reserved.
+# Licensed under the Apache License, Version 2.0. See LICENSE file in the mmrotate repository for full license information.
 from .center_l1_loss import CenterL1Loss
 from .convex_giou_loss import BCConvexGIoULoss, ConvexGIoULoss
 from .gaussian_dist_loss import GDLoss
