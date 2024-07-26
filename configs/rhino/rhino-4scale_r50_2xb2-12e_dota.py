@@ -6,6 +6,7 @@ angle_cfg = dict(
 
 model = dict(
     type='RHINO',
+    version='v2',
     num_queries=900,  # num_matching_queries
     with_box_refine=True,
     as_two_stage=True,
